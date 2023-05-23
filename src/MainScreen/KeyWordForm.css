@@ -1,5 +1,3 @@
-.keyWordForm{
-    position: absolute;
-    top:90px;
-    left: 34%;
+.keyWordForm input{
+    width: 90%;
 }

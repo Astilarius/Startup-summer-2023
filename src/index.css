@@ -1,8 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body{
     margin: 0;
     background-color: #F7F7F8;
 }
-.flexrow{
+p{
+    font-family: 'Inter';
+}
+a{
+    font-family: 'Inter';
+}
+span{
+    font-family: 'Inter';
+}
+input{
+    height: 42px;
+    border-radius: 8px;
+}
+button{
+    height: 42px;
+    border-radius: 8px;
+}
+.row{
     display:flex;
     flex-flow: row;
+}
+.column{
+    display:flex;
+    flex-flow:column;
+}
+.evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+.between{
+    display: flex;
+    justify-content: space-between;
+}
+.flex2{
+    flex: 2;
+}
+.gap10{
+    display: flex;
+    gap: 10px 10px;
+}
+.baseline{
+    display: flex;
+    align-items: baseline;
 }

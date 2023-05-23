@@ -163,15 +163,13 @@ function MainScreen(props:MainScreenProps){
   }
   return (
     <>
-      <div className="flexrow">
-        { !props.isFavourite ? 
-          <div>
-            <KeyWordForm {...keyWordFormProps}/>
-            <SearchForm {...searchFormProps}/>
-          </div> : 
-          <></>
+      <div className="row evenly gap10">
+        { !props.isFavourite ? <SearchForm {...searchFormProps}/> : <></>
         }
-        <div className="vacancies">
+        <div className="column evenly gap10 flex2">
+          {
+            !props.isFavourite ? <KeyWordForm {...keyWordFormProps}/> : <></>
+          }
           {vacanciesObject}
         </div>
       </div>

@@ -1,14 +1,17 @@
 .searchForm{
+    flex: 1;
     border-style: solid;
     border-color: Grey 200;
     border-width: 1px;
     border-radius: 10px;
-    position: absolute;
-    width: 20%;
-    left: 10%;
-    top: 90px;
+    height: fit-content;
     padding: 20px;
+    margin: 20px;
+    max-width: 315px;
 }
 .filters{
     display: inline;
+}
+.clearFiltersButton:hover{
+    text-decoration: underline;
 }

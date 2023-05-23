@@ -11,7 +11,7 @@ function SearchForm(props:SearchFormProps) {
   const onSalaryFromChange = (e:React.ChangeEvent<HTMLInputElement>)=>{props.setSalaryFrom(e.target.value)}
   const onSalaryToChange = (e:React.ChangeEvent<HTMLInputElement>)=>{props.setSalaryTo(e.target.value)}
 
-  const onClearFiltersClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+  const onClearFiltersClick = (e:React.MouseEvent<HTMLParagraphElement, MouseEvent>)=>{
     props.setIndustry('')
     props.setSalaryFrom('')
     props.setSalaryTo('')
@@ -19,26 +19,21 @@ function SearchForm(props:SearchFormProps) {
   }
   
   return (
-    <div>
-        <form className='searchForm'>
-            <div className='flexRow filters'>
-              <h1>Фильтры</h1>
-              <div>
-                <label htmlFor="clear">Сбросить все</label>
-                <button onClick={onClearFiltersClick} id='clear' className='clear' type='button'>x</button>
-              </div>
-            </div>
-            <label htmlFor="industry">Отрасль:</label><br />
-            <input data-elem="industry-select" onChange={onIndustryChange} value={props.industry} list="industry-options" placeholder='Выберите отрасль' id="industry" name="industry"></input>
-            <datalist id='industry-options' className='industry-options'>
-                {industriesOptions}
-            </datalist><br />
-            <label htmlFor="salary">Оклад:</label><br />
-            <input data-elem="salary-from-input" onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
-            <input data-elem="salary-to-input" onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/><br />
-            <button data-elem="search-button" type='submit'>Применить</button>
-        </form>
-    </div>
+    <form className='searchForm column evenly gap10'>
+        <div className='row between'>
+          <p>Фильтры</p>
+          <p className='clearFiltersButton' onClick={onClearFiltersClick}>Сбросить все x</p>
+        </div>
+        <label htmlFor="industry">Отрасль:</label>
+        <input data-elem="industry-select" onChange={onIndustryChange} value={props.industry} list="industry-options" placeholder='Выберите отрасль' id="industry" name="industry"></input>
+        <datalist id='industry-options' className='industry-options'>
+            {industriesOptions}
+        </datalist>
+        <label htmlFor="salary">Оклад:</label>
+        <input data-elem="salary-from-input" onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
+        <input data-elem="salary-to-input" onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/>
+        <button data-elem="search-button" type='submit'>Применить</button>
+    </form>
   )
 }
 
