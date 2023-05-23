@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body{
     margin: 0;
     background-color: #F7F7F8;
+}
+ul{
+    font-family: 'Inter';
 }
 p{
     font-family: 'Inter';
 }
 a{
+    color: Black;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+label{
     font-family: 'Inter';
 }
 span{
@@ -15,10 +32,15 @@ span{
 input{
     height: 42px;
     border-radius: 8px;
+    border: 1px solid #D5D6DC;
+    padding-left: 10px;
 }
 button{
     height: 42px;
     border-radius: 8px;
+    background: #5E96FC;
+    color: white;
+    border: 0px;
 }
 .row{
     display:flex;
@@ -35,6 +57,14 @@ button{
 .between{
     display: flex;
     justify-content: space-between;
+}
+.centerJustify{
+    display: flex;
+    justify-content: center;
+}
+.center{
+    display: flex;
+    align-items: center;
 }
 .flex2{
     flex: 2;

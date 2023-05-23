@@ -173,7 +173,9 @@ function MainScreen(props:MainScreenProps){
           {vacanciesObject}
         </div>
       </div>
-      {pageButtons}
+      <div className="row centerJustify gap10">
+        {pageButtons}
+      </div>
     </>
   )
 }
