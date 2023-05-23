@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocalStorage } from '../hooks/UseLocalStorage'
-import { VacancyComponent } from '../MainScreen/MainScreen'
+import { Vacancy } from '../MainScreen/MainScreen'
 
 function VacancyScreen() {
     const [vacancy, setVacancy] = useLocalStorage('vacancy',{})
@@ -14,9 +14,9 @@ function VacancyScreen() {
         <div>
             <h1>{vacancy?.profession}</h1>
             {
-            favorites.find((currentVacancy:VacancyComponent) => currentVacancy.id === vacancy.id) ?
+            favorites.find((currentVacancy:Vacancy) => currentVacancy.id === vacancy.id) ?
             <button onClick={()=>{
-                const newFavs = favorites.filter((fav:VacancyComponent)=>fav.id!==vacancy.id)
+                const newFavs = favorites.filter((fav:Vacancy)=>fav.id!==vacancy.id)
                 setFavorites(newFavs)
             }}>⭐</button> :
             <button onClick={()=>{
