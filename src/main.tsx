@@ -19,14 +19,14 @@ const router = createBrowserRouter([
     </Template>,
   },
   {
-    path: "favourite/",
+    path: "/favourite/",
     element: 
     <Template>
       <MainScreen {...{isFavourite:true}}/>
     </Template>,
   },
   {
-    path: "vacancy/",
+    path: "/vacancy/",
     element: 
     <Template>
       <VacancyScreen />
