@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 162px;
+    gap: 308px;
+    isolation: isolate;
+    
+    position: absolute;
+    width: 1440px;
+    height: 84px;
+    left: 0px;
+    top: 0px;
+    
+    
+    background: #FFFFFF;
+}
+.ellipse1{
+    position: absolute;
+width: 39.36px;
+height: 15.47px;
+left: -4.42px;
+top: 26.37px;
+
+background: #D9D9D9;
+transform: rotate(-44.78deg);
+}
+.ellipse2{
+    position: absolute;
+    width: 39.36px;
+    height: 15.47px;
+    left: 23.37px;
+    top: 37.42px;
+    
+    background: #D9D9D9;
+    transform: rotate(-134.78deg)
+}
