@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useLocalStorage } from "../hooks/UseLocalStorage";
 import { MainScreenProps } from "../main";
-import Vacancy from "../Vacancies/Vacancy";
+import VacancyComponent from "../Vacancies/Vacancy";
 import KeyWordForm from "./KeyWordForm"
 import SearchForm from "./SearchForm"
 import './MainScreen.css'
@@ -40,7 +40,7 @@ export interface KeyWordFormProps{
   searchInfo:SearchInfo,
   setVacancies:React.Dispatch<React.SetStateAction<Vacancy[]>>,
 }
-export interface  Vacancy {
+export interface Vacancy {
   id : number,
   payment_from:number ,
   payment_to:number ,
@@ -138,7 +138,7 @@ function MainScreen(props:MainScreenProps){
       favourites:favorites,
       setFavorites:setFavorites,
     }
-    return <Vacancy key={vacancy.id} {...vacancyProps}/>
+    return <VacancyComponent key={vacancy.id} {...vacancyProps}/>
   })
   const pageButtons = []
   if(page>2){

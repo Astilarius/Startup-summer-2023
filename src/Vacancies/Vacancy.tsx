@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useLocalStorage } from '../hooks/UseLocalStorage'
 import { Vacancy, VacancyProps } from '../MainScreen/MainScreen'
 
-function Vacancy(props:VacancyProps) {
+function VacancyComponent(props:VacancyProps) {
   const [favorites, setFavorites] = useLocalStorage('favorites',[])
 
   return (
@@ -35,4 +35,4 @@ function Vacancy(props:VacancyProps) {
   )
 }
 
-export default Vacancy
+export default VacancyComponent
