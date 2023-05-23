@@ -2,3 +2,7 @@ body{
     margin: 0;
     background-color: #F7F7F8;
 }
+.flexrow{
+    display:flex;
+    flex-flow: row;
+}

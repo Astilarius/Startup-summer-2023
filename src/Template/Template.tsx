@@ -1,20 +1,18 @@
 import React from 'react'
 import './Template.css'
+import unionImage from './../assets/Union.png' 
 
 function Template({children}:any) {
   return (
     <div>
         <div className='header'>
-            <div className='title'>
-                <div className='logo'>
-                    <div className='ellipse1'></div>
-                    <div className='ellipse2'></div>
-                    <p>Jobored</p>
-                </div>
+            <div className='flexrow title'>
+                <img className='logo' src={unionImage} />
+                <p>Jobored</p>
             </div>
-            <div className='headerButtons'>
-                <a href='http://127.0.0.1:5173/favourite'>Избранное</a>
-                <a href='http://127.0.0.1:5173/'>Поиск вакансий</a>
+            <div className='flexrow buttons'>
+                <a href='https://boisterous-blancmange-1403c4.netlify.app/favourite'>Избранное</a>
+                <a href='https://boisterous-blancmange-1403c4.netlify.app'>Поиск вакансий</a>
             </div>
         </div>
         {children}

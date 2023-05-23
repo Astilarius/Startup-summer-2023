@@ -6,18 +6,18 @@ function Vacancy(props:VacancyProps) {
   const [favorites, setFavorites] = useLocalStorage('favorites',[])
 
   return (
-    <div>
+    <div data-elem={`vacancy-${props.vacancy}`}>
         <h1 onClick={()=>{
       localStorage.setItem('vacancy',JSON.stringify(props.vacancy))
-      window.location.href = 'http://127.0.0.1:5173/vacancy'
+      window.location.href = 'https://boisterous-blancmange-1403c4.netlify.app/vacancy'
       }}>{props.vacancy.profession}</h1>
         {
           favorites.find((currentVacancy:Vacancy) => currentVacancy.id === props.vacancy.id) ?
-          <button onClick={()=>{
+          <button data-elem={`vacancy-${props.vacancy}-shortlist-button`} onClick={()=>{
             const newFavs = favorites.filter((fav:Vacancy)=>fav.id!==props.vacancy.id)
             setFavorites(newFavs)
           }}>⭐</button> :
-          <button onClick={()=>{
+          <button data-elem={`vacancy-${props.vacancy}-shortlist-button`} onClick={()=>{
             const newFavs = [...favorites, props.vacancy]
             setFavorites(newFavs)
           }}>⛥</button>

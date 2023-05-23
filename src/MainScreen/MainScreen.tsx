@@ -4,6 +4,7 @@ import { MainScreenProps } from "../main";
 import Vacancy from "../Vacancies/Vacancy";
 import KeyWordForm from "./KeyWordForm"
 import SearchForm from "./SearchForm"
+import './MainScreen.css'
 
 export interface SearchInfo{
   keyword:string,
@@ -162,14 +163,18 @@ function MainScreen(props:MainScreenProps){
   }
   return (
     <>
-      { !props.isFavourite ? 
-        <>
-          <KeyWordForm {...keyWordFormProps}/>
-          <SearchForm {...searchFormProps}/>
-        </> : 
-        <></>
-      }
-      {vacanciesObject}
+      <div className="flexrow">
+        { !props.isFavourite ? 
+          <div>
+            <KeyWordForm {...keyWordFormProps}/>
+            <SearchForm {...searchFormProps}/>
+          </div> : 
+          <></>
+        }
+        <div className="vacancies">
+          {vacanciesObject}
+        </div>
+      </div>
       {pageButtons}
     </>
   )

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { KeyWordFormProps } from './MainScreen'
+import './KeyWordForm.css'
 
 function KeyWordForm(props:KeyWordFormProps) {
 
@@ -23,9 +24,9 @@ function KeyWordForm(props:KeyWordFormProps) {
       
     }
   return (
-    <div>
-        <input onChange={onKeywordChange} value={props.keyword} id="keyword" placeholder='Введите название вакансии:'/>
-        <button onClick={onSearchClick}>Поиск</button>
+    <div className='keyWordForm'>
+        <input data-elem="search-input" onChange={onKeywordChange} value={props.keyword} id="keyword" placeholder='Введите название вакансии:'/>
+        <button data-elem="search-button" onClick={onSearchClick}>Поиск</button>
     </div>
   )
 }

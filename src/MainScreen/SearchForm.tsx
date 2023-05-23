@@ -1,5 +1,6 @@
 import React from 'react'
 import { SearchFormProps } from './MainScreen'
+import './SearchForm.css'
 
 
 
@@ -19,19 +20,23 @@ function SearchForm(props:SearchFormProps) {
   
   return (
     <div>
-        <form>
-            <h1>Фильтры</h1>
-            <label htmlFor="clear">Сбросить все</label>
-            <button onClick={onClearFiltersClick} id='clear' className='clear' type='button'>x</button>
-            <label htmlFor="industry">Отрасль:</label>
-            <input onChange={onIndustryChange} value={props.industry} list="industry-options" placeholder='Выберите отрасль' id="industry" name="industry"></input>
+        <form className='searchForm'>
+            <div className='flexRow filters'>
+              <h1>Фильтры</h1>
+              <div>
+                <label htmlFor="clear">Сбросить все</label>
+                <button onClick={onClearFiltersClick} id='clear' className='clear' type='button'>x</button>
+              </div>
+            </div>
+            <label htmlFor="industry">Отрасль:</label><br />
+            <input data-elem="industry-select" onChange={onIndustryChange} value={props.industry} list="industry-options" placeholder='Выберите отрасль' id="industry" name="industry"></input>
             <datalist id='industry-options' className='industry-options'>
                 {industriesOptions}
-            </datalist>
-            <label htmlFor="salary">Оклад:</label>
-            <input onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
-            <input onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/>
-            <button type='submit'>Применить</button>
+            </datalist><br />
+            <label htmlFor="salary">Оклад:</label><br />
+            <input data-elem="salary-from-input" onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
+            <input data-elem="salary-to-input" onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/><br />
+            <button data-elem="search-button" type='submit'>Применить</button>
         </form>
     </div>
   )
