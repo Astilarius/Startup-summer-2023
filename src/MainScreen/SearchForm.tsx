@@ -17,6 +17,24 @@ function SearchForm(props:SearchFormProps) {
     props.setSalaryTo('')
     props.setKeyword('')
   }
+
+  const onSearchClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+    props.setPage(1)
+    let newUrl = props.url;
+    if(props.keyword){
+      newUrl+=`keyword=${props.keyword}&`
+    }
+    if(props.searchInfo.salary.from){
+      newUrl+=`payment_from=${props.searchInfo.salary.from}&`
+    }
+    if(props.searchInfo.salary.to){
+      newUrl+=`payment_to=${props.searchInfo.salary.to}&`
+    }
+    if(props.searchInfo.industry){
+      newUrl+=`catalogues=${props.searchInfo.industry}&`
+    }
+    props.setUrl(newUrl)
+  }
   
   return (
     <form className='searchForm column evenly gap10'>
@@ -32,7 +50,7 @@ function SearchForm(props:SearchFormProps) {
         <label htmlFor="salary">Оклад:</label>
         <input data-elem="salary-from-input" onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
         <input data-elem="salary-to-input" onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/>
-        <button data-elem="search-button" type='submit'>Применить</button>
+        <button data-elem="search-button" onClick={onSearchClick}>Применить</button>
     </form>
   )
 }

@@ -30,6 +30,11 @@ export interface SearchFormProps{
   setSalaryFrom:React.Dispatch<React.SetStateAction<string>>,
   salaryTo:string,
   setSalaryTo:React.Dispatch<React.SetStateAction<string>>,
+  setPage:React.Dispatch<React.SetStateAction<number>>,
+  url:string,
+  searchInfo:SearchInfo,
+  keyword:string,
+  setUrl:React.Dispatch<React.SetStateAction<string>>,
 }
 export interface KeyWordFormProps{
   keyword:string,
@@ -114,6 +119,10 @@ function MainScreen(props:MainScreenProps){
   }
   const [keyword, setKeyword] = useState('')
   const searchFormProps:SearchFormProps = {
+    keyword:keyword,
+    setUrl:setUrl,
+    url:url,
+    searchInfo:searchInfo,
     setKeyword:setKeyword,
     industries:industries,
     industry:industry,
@@ -122,6 +131,7 @@ function MainScreen(props:MainScreenProps){
     setSalaryFrom:setSalaryFrom,
     salaryTo:salaryTo,
     setSalaryTo:setSalaryTo,
+    setPage:setPage,
   }
   const keyWordFormProps:KeyWordFormProps = {
     keyword:keyword,

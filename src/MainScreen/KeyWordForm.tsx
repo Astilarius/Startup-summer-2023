@@ -21,7 +21,6 @@ function KeyWordForm(props:KeyWordFormProps) {
         newUrl+=`catalogues=${props.searchInfo.industry}&`
       }
       props.setUrl(newUrl)
-      
     }
   return (
     <div className='keyWordForm'>
