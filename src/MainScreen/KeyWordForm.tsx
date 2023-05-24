@@ -6,6 +6,7 @@ function KeyWordForm(props:KeyWordFormProps) {
 
     const onKeywordChange = (e:React.ChangeEvent<HTMLInputElement>)=>{props.setKeyword(e.target.value)}
     const onSearchClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+      e.preventDefault()
       props.setPage(1)
       let newUrl = props.url;
       if(props.keyword){

@@ -19,6 +19,7 @@ function SearchForm(props:SearchFormProps) {
   }
 
   const onSearchClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+    e.preventDefault()
     props.setPage(1)
     let newUrl = props.url;
     if(props.keyword){
@@ -50,7 +51,7 @@ function SearchForm(props:SearchFormProps) {
         <label htmlFor="salary">Оклад:</label>
         <input data-elem="salary-from-input" onChange={onSalaryFromChange} value={props.salaryFrom} id="salary-from" placeholder='От' name="salary-from" type='number'/>
         <input data-elem="salary-to-input" onChange={onSalaryToChange} value={props.salaryTo} id="salary-to" placeholder='До' name="salary-to" type='number'/>
-        <button data-elem="search-button" onClick={onSearchClick}>Применить</button>
+        <button type='button' data-elem="search-button" onClick={onSearchClick}>Применить</button>
     </form>
   )
 }
